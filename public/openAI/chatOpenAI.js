@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // userInputParent.appendChild(spinnerContainer);
 });
 
+
+
 // Function to show loading spinner
 function showLoadingSpinner() {
     // You can customize this logic based on your spinner implementation
