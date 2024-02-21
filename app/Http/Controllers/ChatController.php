@@ -66,6 +66,7 @@ use DB;
                 ->where('symptoms.symptoms', $selectedKeyword)
                 ->get();
 
+
             if ($specialization->isNotEmpty()) {
                 $recommendedDoctors = [];
 
