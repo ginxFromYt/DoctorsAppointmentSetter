@@ -1,0 +1,52 @@
+<x-app-layout>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <div class="flex flex-wrap -mx-6">
+                        <div class="w-full px-6">
+
+                        <p class="font-bold text-4xl">Search for Doctors or their Specialization</p>
+                        <br>
+                            <!-- Column 1 content here -->
+                            <div class="table-responsive-sm">
+                                <table class="table table-striped " id="mytable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Doctor's Name</th>
+                                            <th scope="col">Chamber</th>
+                                            <th scope="col">Specialization</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Available Time</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($results as $result)
+                                        <tr>
+                                            <td>{{ strtoupper($result->firstname ?? '') }} {{ strtoupper(substr($result->middlename  ?? '', 0, 1)) }}. {{ strtoupper($result->lastname  ?? '') }}</td>
+                                            <td>{{ $result->chamber_name  ?? ''}}</td> <!-- Replace with the actual field name -->
+                                            <td>{{ $result->specialization  ?? ''}}</td> <!-- Replace with the actual field name -->
+                                            <td>{{ $result->location  ?? ''}}</td> <!-- Replace with the actual field name -->
+                                            <td>
+                                                Start time value: {{ $result->start_time  ?? ''}} <br>
+                                                End time value: {{ $result->end_time  ?? ''}}
+                                            </td>
+                                            <td class="flex items-center justify-center">
+                                                <a href="{{ route('user.viewDoctorsCreds', ['id' => $result->u_id]) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-auto rounded">View</a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</x-app-layout>
+
+

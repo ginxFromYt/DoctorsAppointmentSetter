@@ -1,0 +1,10 @@
+:root {
+    --primary: #ac34dc; /* Your new primary color */
+    --secondary: #6c757d; /* Your new secondary color */
+    --success: #38c172; /* Your new success color */
+    --info: #6cb2eb; /* Your new info color */
+    --warning: #e0a21d; /* Your new warning color */
+    --danger: #e3342f; /* Your new danger color */
+    --light: #f8f9fa; /* Your new light color */
+    --dark: #343a40; /* Your new dark color */
+}
