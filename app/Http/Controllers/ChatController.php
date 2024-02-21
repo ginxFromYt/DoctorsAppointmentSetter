@@ -11,6 +11,7 @@ use App\Models\Symptoms;
 use App\Models\DocFieldSpecialization;
 use App\Models\Specialzation;
 use DB;
+use PHPUnit\Event\TestRunner\EventFacadeSealedSubscriber;
 
  class ChatController extends Controller
 {
@@ -65,6 +66,8 @@ use DB;
                 ->join('symptoms', 'symptoms.id', '=', 'doc_field_specilizations.symptom_id')
                 ->where('symptoms.symptoms', $selectedKeyword)
                 ->get();
+
+
 
 
             if ($specialization->isNotEmpty()) {
